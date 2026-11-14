@@ -65,18 +65,18 @@ export const StoreProfilePage: React.FC<{ slug: string }> = ({ slug }) => {
           </div>
         </div>
 
-        <div className="p-6 sm:p-8 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
-          <div className="flex items-start gap-4">
+        <div className="p-4 sm:p-8 flex flex-col lg:flex-row lg:items-center justify-between gap-5 sm:gap-6">
+          <div className="flex flex-col sm:flex-row items-start gap-3.5 sm:gap-4">
             <img
               src={store.logoUrl}
               alt={store.nome}
-              className="w-20 h-20 rounded-2xl object-cover border-4 border-white shadow-lg -mt-12 bg-white shrink-0"
+              className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl object-cover border-4 border-white shadow-lg -mt-10 sm:-mt-12 bg-white shrink-0 relative z-10"
             />
             <div className="space-y-1">
               <span className="text-xs font-extrabold uppercase tracking-wider text-[#C8102E]">
                 {store.segmento} • {store.bairroNome} ({store.zona})
               </span>
-              <h1 className="text-2xl sm:text-3xl font-black text-slate-900">
+              <h1 className="text-xl sm:text-3xl font-black text-slate-900">
                 {store.nome}
               </h1>
               <p className="text-xs sm:text-sm text-slate-600 max-w-2xl">
@@ -230,8 +230,8 @@ export const ProductDetailPage: React.FC<{ id: number }> = ({ id }) => {
               </span>
             </div>
 
-            <div className="flex items-center gap-3">
-              <div className="flex items-center border border-slate-300 rounded-xl overflow-hidden">
+            <div className="flex items-center gap-2.5 sm:gap-3 w-full sm:w-auto">
+              <div className="flex items-center border border-slate-300 rounded-xl overflow-hidden shrink-0">
                 <button
                   type="button"
                   onClick={() => setQty(Math.max(1, qty - 1))}
@@ -239,7 +239,7 @@ export const ProductDetailPage: React.FC<{ id: number }> = ({ id }) => {
                 >
                   <Minus className="w-4 h-4" />
                 </button>
-                <span className="px-4 font-black text-sm">{qty}</span>
+                <span className="px-3.5 sm:px-4 font-black text-sm">{qty}</span>
                 <button
                   type="button"
                   onClick={() => setQty(qty + 1)}
@@ -255,9 +255,9 @@ export const ProductDetailPage: React.FC<{ id: number }> = ({ id }) => {
                   addToCart(product, qty);
                   navigate('/carrinho');
                 }}
-                className="px-6 py-3 rounded-xl bg-[#C8102E] hover:bg-[#9B0B22] text-white font-black text-sm shadow-lg flex items-center gap-2"
+                className="flex-1 sm:flex-initial justify-center px-5 sm:px-6 py-3 rounded-xl bg-[#C8102E] hover:bg-[#9B0B22] text-white font-black text-xs sm:text-sm shadow-lg flex items-center gap-2"
               >
-                <ShoppingBag className="w-4 h-4" />
+                <ShoppingBag className="w-4 h-4 shrink-0" />
                 Comprar no Meu Bairro
               </button>
             </div>
@@ -459,19 +459,19 @@ export const CartAndCheckoutPage: React.FC = () => {
                 return (
                   <div
                     key={item.product.id}
-                    className="flex items-center justify-between gap-4 border-b border-slate-100 pb-4 last:border-0 last:pb-0"
+                    className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 border-b border-slate-100 pb-4 last:border-0 last:pb-0"
                   >
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-3 min-w-0">
                       <img
                         src={item.product.imagemUrl}
                         alt={item.product.nome}
-                        className="w-16 h-16 rounded-xl object-cover border border-slate-200"
+                        className="w-16 h-16 rounded-xl object-cover border border-slate-200 shrink-0"
                       />
-                      <div>
-                        <span className="text-[10px] font-bold text-[#C8102E] block">
+                      <div className="min-w-0">
+                        <span className="text-[10px] font-bold text-[#C8102E] block truncate">
                           {item.store.nome} • {item.store.bairroNome}
                         </span>
-                        <h3 className="text-xs sm:text-sm font-black text-slate-900">
+                        <h3 className="text-xs sm:text-sm font-black text-slate-900 line-clamp-2">
                           {item.product.nome}
                         </h3>
                         <span className="text-xs font-extrabold text-slate-700">
@@ -480,7 +480,7 @@ export const CartAndCheckoutPage: React.FC = () => {
                       </div>
                     </div>
 
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center justify-end gap-2 self-end sm:self-auto shrink-0">
                       <button
                         type="button"
                         onClick={() => updateCartQty(item.product.id, item.quantity - 1)}

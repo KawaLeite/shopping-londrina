@@ -175,23 +175,23 @@ export const InteligenciaEconomicaPage: React.FC = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+    <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-5 sm:py-8 space-y-6 sm:space-y-8">
       {/* 1. CABEÇALHO INSTITUCIONAL DA SECRETARIA DE DESENVOLVIMENTO ECONÔMICO */}
-      <div className="bg-gradient-to-br from-slate-950 via-[#8B0A1E] to-slate-900 text-white rounded-3xl p-6 sm:p-10 shadow-2xl border border-rose-500/30">
-        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+      <div className="bg-gradient-to-br from-slate-950 via-[#8B0A1E] to-slate-900 text-white rounded-3xl p-5 sm:p-10 shadow-2xl border border-rose-500/30">
+        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-5 sm:gap-6">
           <div className="space-y-3 max-w-3xl">
             <div className="flex flex-wrap items-center gap-2">
-              <span className="inline-flex items-center gap-1.5 bg-amber-400 text-slate-950 px-3 py-1 rounded-full text-xs font-black uppercase">
-                <Flame className="w-4 h-4" />
-                Secretaria de Desenvolvimento Econômico • CODEL Londrina
+              <span className="inline-flex items-center gap-1.5 bg-amber-400 text-slate-950 px-3 py-1 rounded-full text-[10px] sm:text-xs font-black uppercase">
+                <Flame className="w-4 h-4 shrink-0" />
+                <span>Secretaria de Desenv. Econômico • CODEL</span>
               </span>
-              <span className="inline-flex items-center gap-1.5 bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 px-3 py-1 rounded-full text-xs font-bold">
-                <Database className="w-3.5 h-3.5" />
-                Sincronizado com a Base Municipal de Dados (Tempo Real)
+              <span className="inline-flex items-center gap-1.5 bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 px-3 py-1 rounded-full text-[10px] sm:text-xs font-bold">
+                <Database className="w-3.5 h-3.5 shrink-0" />
+                <span>Sincronizado Base Municipal (Tempo Real)</span>
               </span>
             </div>
 
-            <h1 className="text-2xl sm:text-4xl font-black leading-tight">
+            <h1 className="text-xl sm:text-4xl font-black leading-tight">
               Observatório & Mapa de Calor da Atividade Comercial de Londrina
             </h1>
 
@@ -204,14 +204,14 @@ export const InteligenciaEconomicaPage: React.FC = () => {
             <button
               type="button"
               onClick={handleExportBaseMunicipal}
-              className="px-5 py-3 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-black text-xs shadow-lg flex items-center justify-center gap-2 transition-all"
+              className="w-full sm:w-auto justify-center px-5 py-3 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-black text-xs shadow-lg flex items-center gap-2 transition-all"
             >
-              <Download className="w-4 h-4" />
+              <Download className="w-4 h-4 shrink-0" />
               Exportar Lote p/ Base Municipal (JSON)
             </button>
             <div className="bg-black/35 border border-white/15 rounded-xl px-4 py-2.5 text-[11px] text-rose-100">
               <div className="font-bold text-white flex items-center gap-1.5">
-                <ShieldCheck className="w-4 h-4 text-emerald-400" />
+                <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
                 Pipeline Data Lake Municipal Ativo
               </div>
               <div>Integração: SMTER • CODEL • Fazenda (ISS)</div>
@@ -220,12 +220,12 @@ export const InteligenciaEconomicaPage: React.FC = () => {
         </div>
 
         {/* KPIs Estratégicos Municipais */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 pt-6 border-t border-white/15">
-          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mt-6 sm:mt-8 pt-5 sm:pt-6 border-t border-white/15">
+          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-3.5 sm:p-4 border border-white/10">
             <span className="text-[11px] text-rose-200 font-bold uppercase">
               Volume Mapeado na Base (Mês)
             </span>
-            <span className="text-2xl sm:text-3xl font-black text-white block mt-1">
+            <span className="text-xl sm:text-3xl font-black text-white block mt-1">
               R$ 9,16 Mi
             </span>
             <span className="text-[11px] text-emerald-300 font-semibold">
@@ -233,11 +233,11 @@ export const InteligenciaEconomicaPage: React.FC = () => {
             </span>
           </div>
 
-          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/10">
+          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-3.5 sm:p-4 border border-white/10">
             <span className="text-[11px] text-rose-200 font-bold uppercase">
               Modalidade Predominante
             </span>
-            <span className="text-2xl sm:text-3xl font-black text-amber-300 block mt-1">
+            <span className="text-xl sm:text-3xl font-black text-amber-300 block mt-1">
               {mediaPresencialCidade}% Presencial
             </span>
             <span className="text-[11px] text-rose-100">
@@ -245,11 +245,11 @@ export const InteligenciaEconomicaPage: React.FC = () => {
             </span>
           </div>
 
-          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/10">
+          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-3.5 sm:p-4 border border-white/10">
             <span className="text-[11px] text-rose-200 font-bold uppercase">
               Áreas Mais Ativas (Calor Máximo)
             </span>
-            <span className="text-lg sm:text-xl font-black text-white block mt-1">
+            <span className="text-base sm:text-xl font-black text-white block mt-1">
               Centro (98%) & Palhano (95%)
             </span>
             <span className="text-[11px] text-amber-300">
@@ -257,11 +257,11 @@ export const InteligenciaEconomicaPage: React.FC = () => {
             </span>
           </div>
 
-          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/10">
+          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-3.5 sm:p-4 border border-white/10">
             <span className="text-[11px] text-rose-200 font-bold uppercase">
               Áreas Menos Ativas (Foco SDE)
             </span>
-            <span className="text-lg sm:text-xl font-black text-rose-300 block mt-1">
+            <span className="text-base sm:text-xl font-black text-rose-300 block mt-1">
               Heimtal (32%) & Cafezal (38%)
             </span>
             <span className="text-[11px] text-rose-100">
@@ -272,35 +272,35 @@ export const InteligenciaEconomicaPage: React.FC = () => {
       </div>
 
       {/* 2. MAPA DE CALOR INTERATIVO DE LONDRINA + INSPETOR POR REGIÃO */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-        <div className="lg:col-span-7 bg-white rounded-3xl border border-slate-200 p-5 shadow-sm space-y-4">
-          <div className="flex flex-wrap items-center justify-between gap-3">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6 items-start">
+        <div className="lg:col-span-7 bg-white rounded-3xl border border-slate-200 p-4 sm:p-5 shadow-sm space-y-4">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div>
               <span className="text-[10px] font-extrabold uppercase tracking-wider text-[#C8102E] flex items-center gap-1">
                 <Layers className="w-3.5 h-3.5" />
                 Geointeligência Econômica Municipal
               </span>
-              <h2 className="text-lg font-black text-slate-900">
+              <h2 className="text-base sm:text-lg font-black text-slate-900">
                 Mapa de Calor da Intensidade Comercial por Região
               </h2>
             </div>
 
-            <div className="flex items-center gap-1.5 bg-slate-100 p-1 rounded-xl text-xs font-bold">
+            <div className="grid grid-cols-3 sm:flex items-center gap-1 bg-slate-100 p-1 rounded-xl text-[11px] sm:text-xs font-bold">
               <button
                 type="button"
                 onClick={() => setHeatFilter('intensidade')}
-                className={`px-2.5 py-1.5 rounded-lg transition-all ${
+                className={`px-2 py-1.5 rounded-lg transition-all text-center ${
                   heatFilter === 'intensidade'
                     ? 'bg-[#C8102E] text-white shadow-sm'
                     : 'text-slate-600'
                 }`}
               >
-                Intensidade Comercial
+                Intensidade
               </button>
               <button
                 type="button"
                 onClick={() => setHeatFilter('presencial')}
-                className={`px-2.5 py-1.5 rounded-lg transition-all ${
+                className={`px-2 py-1.5 rounded-lg transition-all text-center ${
                   heatFilter === 'presencial'
                     ? 'bg-[#C8102E] text-white shadow-sm'
                     : 'text-slate-600'
@@ -311,20 +311,20 @@ export const InteligenciaEconomicaPage: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setHeatFilter('invisibilidade')}
-                className={`px-2.5 py-1.5 rounded-lg transition-all ${
+                className={`px-2 py-1.5 rounded-lg transition-all text-center ${
                   heatFilter === 'invisibilidade'
                     ? 'bg-[#C8102E] text-white shadow-sm'
                     : 'text-slate-600'
                 }`}
               >
-                Evasão ao Centro
+                Evasão Centro
               </button>
             </div>
           </div>
 
           <div
             ref={mapRef}
-            className="w-full h-[420px] rounded-2xl overflow-hidden border border-slate-200"
+            className="w-full h-72 sm:h-[420px] rounded-2xl overflow-hidden border border-slate-200"
           />
 
           {/* Legenda Térmica */}
@@ -497,11 +497,11 @@ export const InteligenciaEconomicaPage: React.FC = () => {
               <div
                 key={area.id}
                 onClick={() => setSelectedArea(area)}
-                className="p-3.5 rounded-2xl border border-slate-200 hover:border-[#C8102E] cursor-pointer transition-all flex items-center justify-between gap-4"
+                className="p-3.5 rounded-2xl border border-slate-200 hover:border-[#C8102E] cursor-pointer transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-4"
               >
-                <div className="space-y-0.5">
-                  <div className="flex items-center gap-2">
-                    <span className="w-6 h-6 rounded-full bg-[#C8102E] text-white text-xs font-black flex items-center justify-center">
+                <div className="space-y-0.5 min-w-0">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="w-6 h-6 rounded-full bg-[#C8102E] text-white text-xs font-black flex items-center justify-center shrink-0">
                       {idx + 1}
                     </span>
                     <span className="font-black text-sm text-slate-900">{area.nome}</span>
@@ -509,12 +509,12 @@ export const InteligenciaEconomicaPage: React.FC = () => {
                       {area.zona}
                     </span>
                   </div>
-                  <p className="text-xs text-slate-500 pl-8">
+                  <p className="text-xs text-slate-500 sm:pl-8">
                     Líder: <strong>{area.tiposMaisVendem[0].segmento}</strong> ({area.lojasAtivas} lojas ativas)
                   </p>
                 </div>
-                <div className="text-right shrink-0">
-                  <span className="text-base font-black text-[#C8102E] block">
+                <div className="flex sm:block items-center justify-between sm:text-right shrink-0 border-t sm:border-t-0 border-slate-100 pt-2 sm:pt-0">
+                  <span className="text-sm sm:text-base font-black text-[#C8102E] block">
                     {area.intensidadeComercial}% Ativo
                   </span>
                   <span className="text-[11px] text-slate-500">
@@ -527,15 +527,15 @@ export const InteligenciaEconomicaPage: React.FC = () => {
         </div>
 
         {/* Menos Ativas (Foco de Políticas Públicas) */}
-        <div className="bg-white rounded-3xl border border-slate-200 p-6 shadow-sm space-y-4">
+        <div className="bg-white rounded-3xl border border-slate-200 p-5 sm:p-6 shadow-sm space-y-4">
           <div className="flex items-center justify-between">
             <div>
               <span className="text-[10px] font-black uppercase tracking-wider text-rose-700">
                 Zonas de Descentralização & Incentivo Fiscal
               </span>
-              <h3 className="text-lg font-black text-slate-900 flex items-center gap-2">
-                <AlertTriangle className="w-5 h-5 text-amber-500" />
-                Áreas com Comércio Menos Ativo (Oportunidade SDE)
+              <h3 className="text-base sm:text-lg font-black text-slate-900 flex items-center gap-2">
+                <AlertTriangle className="w-5 h-5 text-amber-500 shrink-0" />
+                <span>Áreas com Comércio Menos Ativo (Oportunidade SDE)</span>
               </h3>
             </div>
           </div>
@@ -545,11 +545,11 @@ export const InteligenciaEconomicaPage: React.FC = () => {
               <div
                 key={area.id}
                 onClick={() => setSelectedArea(area)}
-                className="p-3.5 rounded-2xl border border-amber-200 bg-amber-50/30 hover:border-[#C8102E] cursor-pointer transition-all flex items-center justify-between gap-4"
+                className="p-3.5 rounded-2xl border border-amber-200 bg-amber-50/30 hover:border-[#C8102E] cursor-pointer transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-4"
               >
-                <div className="space-y-0.5">
-                  <div className="flex items-center gap-2">
-                    <span className="w-6 h-6 rounded-full bg-amber-500 text-slate-950 text-xs font-black flex items-center justify-center">
+                <div className="space-y-0.5 min-w-0">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="w-6 h-6 rounded-full bg-amber-500 text-slate-950 text-xs font-black flex items-center justify-center shrink-0">
                       {idx + 1}
                     </span>
                     <span className="font-black text-sm text-slate-900">{area.nome}</span>
@@ -557,12 +557,12 @@ export const InteligenciaEconomicaPage: React.FC = () => {
                       {area.statusAtividade}
                     </span>
                   </div>
-                  <p className="text-xs text-slate-600 pl-8">
+                  <p className="text-xs text-slate-600 sm:pl-8">
                     Carência: <strong>{area.tiposMenosAtendidos.slice(0, 2).join(', ')}</strong> • Evasão antes do Hub: {area.indiceInvisibilidadeAntesHub}%
                   </p>
                 </div>
-                <div className="text-right shrink-0">
-                  <span className="text-base font-black text-amber-800 block">
+                <div className="flex sm:block items-center justify-between sm:text-right shrink-0 border-t sm:border-t-0 border-amber-200/60 pt-2 sm:pt-0">
+                  <span className="text-sm sm:text-base font-black text-amber-800 block">
                     {area.intensidadeComercial}% Ativo
                   </span>
                   <span className="text-[11px] text-emerald-700 font-bold">

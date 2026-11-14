@@ -87,16 +87,16 @@ export const BuscaPage: React.FC = () => {
   }, [storesWithProximity, query, onlyMyBairro]);
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6">
+    <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-5 sm:py-8 space-y-6">
       {/* Banner de Contexto da Busca Hiperlocal */}
-      <div className="bg-white rounded-3xl border border-slate-200 p-5 sm:p-6 shadow-sm space-y-4">
-        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+      <div className="bg-white rounded-3xl border border-slate-200 p-4 sm:p-6 shadow-sm space-y-4">
+        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3 sm:gap-4">
           <div>
-            <div className="inline-flex items-center gap-1.5 text-xs font-extrabold text-[#C8102E] uppercase tracking-wider mb-1">
-              <Compass className="w-4 h-4" />
-              Motor de Busca Hiperlocal • Hub de Bairros Londrina
+            <div className="inline-flex items-center gap-1.5 text-[11px] sm:text-xs font-extrabold text-[#C8102E] uppercase tracking-wider mb-1">
+              <Compass className="w-4 h-4 shrink-0" />
+              <span>Motor de Busca Hiperlocal • Hub de Bairros</span>
             </div>
-            <h1 className="text-xl sm:text-2xl font-black text-slate-900">
+            <h1 className="text-lg sm:text-2xl font-black text-slate-900">
               Pesquisa Priorizada por Proximidade ({selectedBairro.nome})
             </h1>
             <p className="text-xs text-slate-500">
@@ -105,12 +105,12 @@ export const BuscaPage: React.FC = () => {
           </div>
 
           {/* Seletor de Bairro na Busca */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 w-full sm:w-auto">
             <MapPin className="w-4 h-4 text-[#C8102E] shrink-0" />
             <select
               value={selectedBairro.id}
               onChange={(e) => setSelectedBairroId(e.target.value)}
-              className="rounded-xl border-slate-300 text-xs font-extrabold text-slate-900 focus:border-[#C8102E] focus:ring-[#C8102E]"
+              className="w-full sm:w-auto max-w-full rounded-xl border-slate-300 text-xs font-extrabold text-slate-900 focus:border-[#C8102E] focus:ring-[#C8102E]"
             >
               {bairros.map((b) => (
                 <option key={b.id} value={b.id}>

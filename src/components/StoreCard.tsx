@@ -78,17 +78,17 @@ export const StoreCard: React.FC<{ store: StoreWithProximity }> = ({ store }) =>
           </div>
         )}
 
-        <div className="pt-2 border-t border-slate-100 flex items-center justify-between text-xs text-slate-600">
+        <div className="pt-2 border-t border-slate-100 flex flex-wrap items-center justify-between gap-x-2 gap-y-1 text-xs text-slate-600">
           <span className="font-extrabold text-amber-600 flex items-center gap-1">
-            <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+            <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400 shrink-0" />
             {store.nota.toFixed(1)} ({store.avaliacoes})
           </span>
           <span className="flex items-center gap-1 font-medium">
-            <Clock className="w-3.5 h-3.5 text-slate-400" />
+            <Clock className="w-3.5 h-3.5 text-slate-400 shrink-0" />
             {store.tempoEntrega}
           </span>
           <span className="font-bold text-emerald-700 flex items-center gap-1">
-            <Truck className="w-3.5 h-3.5" />
+            <Truck className="w-3.5 h-3.5 shrink-0" />
             {store.taxaEntrega === 0 ? 'Grátis no Bairro' : `R$ ${store.taxaEntrega.toFixed(2).replace('.', ',')}`}
           </span>
         </div>

@@ -71,9 +71,9 @@ const RouterView: React.FC = () => {
 export const App: React.FC = () => {
   return (
     <LondrinaAppProvider>
-      <div className="min-h-screen flex flex-col bg-[#F8FAFC] text-slate-900">
+      <div className="min-h-screen flex flex-col bg-[#F8FAFC] text-slate-900 overflow-x-hidden pb-16 lg:pb-0">
         <Header />
-        <main className="flex-1">
+        <main className="flex-1 w-full max-w-full">
           <RouterView />
         </main>
         <Footer />

@@ -70,12 +70,12 @@ export const MerchantDashboardPage: React.FC = () => {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
       {/* Cabeçalho do Lojista */}
-      <div className="bg-gradient-to-r from-[#8B0A1E] via-[#C8102E] to-slate-900 text-white rounded-3xl p-6 sm:p-8 shadow-xl flex flex-col lg:flex-row lg:items-center justify-between gap-6">
-        <div className="flex items-center gap-4">
+      <div className="bg-gradient-to-r from-[#8B0A1E] via-[#C8102E] to-slate-900 text-white rounded-3xl p-5 sm:p-8 shadow-xl flex flex-col lg:flex-row lg:items-center justify-between gap-5 sm:gap-6">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
           <img
             src={merchantStore.logoUrl}
             alt={merchantStore.nome}
-            className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl object-cover border-2 border-amber-400"
+            className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl object-cover border-2 border-amber-400 shrink-0"
           />
           <div className="space-y-1">
             <div className="flex flex-wrap items-center gap-2">
@@ -83,32 +83,34 @@ export const MerchantDashboardPage: React.FC = () => {
                 Portal do Lojista • LondrinaGO PJ
               </span>
               <span className="text-xs text-rose-200 font-semibold flex items-center gap-1">
-                <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
+                <ShieldCheck className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
                 CNPJ {merchantStore.cnpj} • Alvará SEI Ativo
               </span>
             </div>
-            <h1 className="text-2xl sm:text-3xl font-black">{merchantStore.nome}</h1>
+            <h1 className="text-xl sm:text-3xl font-black">{merchantStore.nome}</h1>
             <p className="text-xs text-rose-100 flex items-center gap-1">
-              <MapPin className="w-3.5 h-3.5 text-amber-300" />
-              {merchantStore.endereco} • Hub do Bairro:{' '}
-              <strong>{merchantStore.bairroNome}</strong>
+              <MapPin className="w-3.5 h-3.5 text-amber-300 shrink-0" />
+              <span>
+                {merchantStore.endereco} • Hub do Bairro:{' '}
+                <strong>{merchantStore.bairroNome}</strong>
+              </span>
             </p>
           </div>
         </div>
 
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-col sm:flex-row flex-wrap gap-2.5 sm:gap-3">
           <button
             type="button"
             onClick={() => setShowNewModal(true)}
-            className="px-5 py-3 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-black text-xs shadow-lg flex items-center gap-2"
+            className="w-full sm:w-auto justify-center px-5 py-3 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-black text-xs shadow-lg flex items-center gap-2"
           >
-            <Plus className="w-4 h-4" />
+            <Plus className="w-4 h-4 shrink-0" />
             Cadastrar Produto no Bairro
           </button>
           <button
             type="button"
             onClick={() => navigate(`/loja/${merchantStore.slug}`)}
-            className="px-4 py-3 rounded-xl bg-white/15 hover:bg-white/25 text-white font-bold text-xs border border-white/25"
+            className="w-full sm:w-auto justify-center px-4 py-3 rounded-xl bg-white/15 hover:bg-white/25 text-white font-bold text-xs border border-white/25 text-center"
           >
             Ver Minha Vitrine Pública
           </button>

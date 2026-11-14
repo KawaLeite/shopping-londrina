@@ -100,31 +100,31 @@ export const HubBairrosPage: React.FC = () => {
   }, [selectedBairro, storesWithProximity]);
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+    <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-5 sm:py-8 space-y-6 sm:space-y-8">
       {/* Cabeçalho do Hub de Bairros */}
-      <div className="bg-gradient-to-br from-[#8B0A1E] via-[#C8102E] to-slate-900 rounded-3xl p-6 sm:p-10 text-white shadow-xl border border-rose-400/20">
+      <div className="bg-gradient-to-br from-[#8B0A1E] via-[#C8102E] to-slate-900 rounded-3xl p-5 sm:p-10 text-white shadow-xl border border-rose-400/20">
         <div className="max-w-3xl space-y-3">
-          <div className="inline-flex items-center gap-2 bg-amber-400 text-slate-950 px-3 py-1 rounded-full text-xs font-black uppercase">
-            <Compass className="w-4 h-4" />
-            Inovação Exclusiva • Shopping Digital de Londrina
+          <div className="inline-flex items-center gap-2 bg-amber-400 text-slate-950 px-3 py-1 rounded-full text-[10px] sm:text-xs font-black uppercase">
+            <Compass className="w-4 h-4 shrink-0" />
+            <span>Inovação Exclusiva • Shopping Digital de Londrina</span>
           </div>
-          <h1 className="text-2xl sm:text-4xl font-black leading-tight">
+          <h1 className="text-xl sm:text-4xl font-black leading-tight">
             Hub de Bairros: Tornando Visível o Comércio a Duas Quadras da Sua Casa
           </h1>
-          <p className="text-sm sm:text-base text-rose-100 leading-relaxed">
+          <p className="text-xs sm:text-base text-rose-100 leading-relaxed">
             Londrina possui mais de 580 mil habitantes distribuídos em grandes polos (Zona Norte, Sul, Leste, Oeste e Patrimônios). Nosso algoritmo geográfico prioriza automaticamente na vitrine inicial e nas buscas os produtos disponíveis no seu próprio bairro, evitando deslocamentos desnecessários ao Centro e mantendo a riqueza circulando na comunidade.
           </p>
         </div>
       </div>
 
       {/* Seletor de Bairro + Mapa Interativo de Raio de Quadras */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6 items-start">
         {/* Lista de Bairros */}
-        <div className="lg:col-span-5 bg-white rounded-3xl border border-slate-200 p-5 shadow-sm space-y-4">
-          <div className="flex items-center justify-between">
+        <div className="lg:col-span-5 bg-white rounded-3xl border border-slate-200 p-4 sm:p-5 shadow-sm space-y-4">
+          <div className="flex items-center justify-between gap-2">
             <div>
-              <h2 className="text-base font-black text-slate-900 flex items-center gap-2">
-                <Navigation className="w-4 h-4 text-[#C8102E]" />
+              <h2 className="text-sm sm:text-base font-black text-slate-900 flex items-center gap-2">
+                <Navigation className="w-4 h-4 text-[#C8102E] shrink-0" />
                 Escolha seu Bairro em Londrina
               </h2>
               <p className="text-xs text-slate-500">
@@ -134,7 +134,7 @@ export const HubBairrosPage: React.FC = () => {
             <button
               type="button"
               onClick={() => setAlgoritmoProximidadeAtivo(!algoritmoProximidadeAtivo)}
-              className={`px-3 py-1 rounded-lg text-xs font-black ${
+              className={`px-3 py-1.5 rounded-lg text-xs font-black shrink-0 ${
                 algoritmoProximidadeAtivo
                   ? 'bg-[#C8102E] text-white'
                   : 'bg-slate-200 text-slate-700'
@@ -152,14 +152,14 @@ export const HubBairrosPage: React.FC = () => {
                   key={b.id}
                   type="button"
                   onClick={() => setSelectedBairroId(b.id)}
-                  className={`w-full text-left p-3 rounded-2xl border transition-all flex items-center justify-between ${
+                  className={`w-full text-left p-3 rounded-2xl border transition-all flex items-center justify-between gap-2 ${
                     active
                       ? 'bg-rose-50/90 border-[#C8102E] ring-2 ring-[#C8102E]/20'
                       : 'bg-white hover:bg-slate-50 border-slate-200'
                   }`}
                 >
-                  <div>
-                    <div className="flex items-center gap-2">
+                  <div className="min-w-0">
+                    <div className="flex flex-wrap items-center gap-1.5">
                       <span className="text-xs sm:text-sm font-black text-slate-900">
                         {b.nome}
                       </span>
@@ -167,8 +167,8 @@ export const HubBairrosPage: React.FC = () => {
                         {b.zona}
                       </span>
                     </div>
-                    <p className="text-[11px] text-slate-500 mt-0.5">
-                      {b.referencia} • {b.lojasAtivas} lojas • Crescimento +{b.crescimentoPosHub}%
+                    <p className="text-[11px] text-slate-500 mt-0.5 truncate">
+                      {b.referencia} • {b.lojasAtivas} lojas • +{b.crescimentoPosHub}%
                     </p>
                   </div>
                   {active && <CheckCircle2 className="w-5 h-5 text-[#C8102E] shrink-0" />}
@@ -186,19 +186,19 @@ export const HubBairrosPage: React.FC = () => {
                 <span className="text-[10px] font-extrabold uppercase tracking-wider text-[#C8102E]">
                   Georreferenciamento em Tempo Real
                 </span>
-                <h3 className="text-base font-black text-slate-900">
+                <h3 className="text-sm sm:text-base font-black text-slate-900">
                   Raio de Caminhabilidade (2 a 4 Quadras) — {selectedBairro.nome}
                 </h3>
               </div>
-              <span className="text-xs font-bold bg-emerald-50 text-emerald-700 border border-emerald-200 px-3 py-1 rounded-full flex items-center gap-1">
-                <Footprints className="w-3.5 h-3.5" />
+              <span className="text-[11px] sm:text-xs font-bold bg-emerald-50 text-emerald-700 border border-emerald-200 px-2.5 py-1 rounded-full flex items-center gap-1">
+                <Footprints className="w-3.5 h-3.5 shrink-0" />
                 Retirada a pé em 3 a 6 min
               </span>
             </div>
 
             <div
               ref={mapContainerRef}
-              className="w-full h-80 rounded-2xl overflow-hidden border border-slate-200"
+              className="w-full h-64 sm:h-80 rounded-2xl overflow-hidden border border-slate-200"
             />
           </div>
 

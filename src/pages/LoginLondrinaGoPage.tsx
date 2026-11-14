@@ -64,22 +64,22 @@ export const LoginLondrinaGoPage: React.FC = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+    <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-5 sm:py-10 space-y-6 sm:space-y-10">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
         {/* COLUNA ESQUERDA: FORMULÁRIO OFICIAL DE LOGIN ÚNICO LONDRINAGO */}
         <div className="lg:col-span-5 bg-white rounded-3xl border-2 border-slate-200 shadow-xl overflow-hidden">
-          <div className="bg-gradient-to-r from-[#8B0A1E] via-[#C8102E] to-[#9B0B22] p-6 text-white space-y-3">
-            <div className="flex items-center justify-between">
+          <div className="bg-gradient-to-r from-[#8B0A1E] via-[#C8102E] to-[#9B0B22] p-5 sm:p-6 text-white space-y-3">
+            <div className="flex flex-wrap items-center justify-between gap-2">
               <img
                 src="/assets/brand/londrinago-logo.svg"
                 alt="LondrinaGO"
-                className="h-11 w-auto"
+                className="h-9 sm:h-11 w-auto"
               />
               <span className="text-[10px] font-black uppercase tracking-wider bg-white/15 px-2.5 py-1 rounded-full border border-white/20">
                 SSO Municipal v2.4
               </span>
             </div>
-            <h1 className="text-xl font-black leading-snug">
+            <h1 className="text-lg sm:text-xl font-black leading-snug">
               Acesso Único Municipal • LondrinaGO & LondrinaON Cidadão
             </h1>
             <p className="text-xs text-rose-100">
@@ -87,7 +87,7 @@ export const LoginLondrinaGoPage: React.FC = () => {
             </p>
           </div>
 
-          <form onSubmit={handleFormSubmit} className="p-6 space-y-4">
+          <form onSubmit={handleFormSubmit} className="p-5 sm:p-6 space-y-4">
             {currentUser && (
               <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-3 text-xs text-emerald-900 flex items-center justify-between">
                 <div>
@@ -195,15 +195,15 @@ export const LoginLondrinaGoPage: React.FC = () => {
                     key={acc.id}
                     className="rounded-2xl border-2 border-slate-200 hover:border-[#C8102E] p-4 transition-all bg-slate-50/50 space-y-3"
                   >
-                    <div className="flex flex-wrap items-center justify-between gap-2">
-                      <div className="flex items-center gap-3">
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                      <div className="flex items-start sm:items-center gap-3 min-w-0">
                         <img
                           src={acc.avatar}
                           alt={acc.name}
-                          className="w-12 h-12 rounded-xl object-cover border-2 border-[#C8102E]"
+                          className="w-12 h-12 rounded-xl object-cover border-2 border-[#C8102E] shrink-0"
                         />
-                        <div>
-                          <div className="flex items-center gap-2">
+                        <div className="min-w-0">
+                          <div className="flex flex-wrap items-center gap-1.5">
                             <span className="px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase bg-[#C8102E] text-white">
                               Perfil: {acc.role.toUpperCase()}
                             </span>
@@ -211,7 +211,7 @@ export const LoginLondrinaGoPage: React.FC = () => {
                               Protocolo {acc.protocoloGovBr}
                             </span>
                           </div>
-                          <h3 className="text-sm sm:text-base font-black text-slate-900 mt-0.5">
+                          <h3 className="text-sm sm:text-base font-black text-slate-900 mt-0.5 leading-snug">
                             {acc.name}
                           </h3>
                           <p className="text-[11px] text-emerald-700 font-semibold">
@@ -223,7 +223,7 @@ export const LoginLondrinaGoPage: React.FC = () => {
                       <button
                         type="button"
                         onClick={() => handleQuickSelect(acc.role, targetUrl)}
-                        className="px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-[#C8102E] text-white text-xs font-extrabold transition-colors flex items-center gap-1.5"
+                        className="w-full sm:w-auto justify-center px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-[#C8102E] text-white text-xs font-extrabold transition-colors flex items-center gap-1.5 shrink-0"
                       >
                         Entrar como {acc.role.toUpperCase()}
                         <ArrowRight className="w-3.5 h-3.5" />
@@ -232,42 +232,42 @@ export const LoginLondrinaGoPage: React.FC = () => {
 
                     {/* Credenciais explícitas para cópia */}
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 bg-white p-3 rounded-xl border border-slate-200 text-xs">
-                      <div className="flex items-center justify-between gap-1">
-                        <div>
+                      <div className="flex items-center justify-between gap-1 min-w-0">
+                        <div className="min-w-0">
                           <span className="text-[10px] text-slate-400 block">E-mail Login:</span>
-                          <code className="font-mono font-bold text-slate-800 text-[11px]">
+                          <code className="font-mono font-bold text-slate-800 text-[11px] break-all">
                             {acc.email}
                           </code>
                         </div>
                         <button
                           type="button"
                           onClick={() => copyText(acc.email, 'E-mail')}
-                          className="p-1 text-slate-400 hover:text-[#C8102E]"
+                          className="p-1 text-slate-400 hover:text-[#C8102E] shrink-0"
                         >
                           <Copy className="w-3.5 h-3.5" />
                         </button>
                       </div>
 
-                      <div className="flex items-center justify-between gap-1">
-                        <div>
+                      <div className="flex items-center justify-between gap-1 min-w-0">
+                        <div className="min-w-0">
                           <span className="text-[10px] text-slate-400 block">
                             CPF {acc.cnpj ? '/ CNPJ' : ''}:
                           </span>
-                          <code className="font-mono font-bold text-slate-800 text-[11px]">
+                          <code className="font-mono font-bold text-slate-800 text-[11px] break-all">
                             {acc.cpf} {acc.cnpj ? `• ${acc.cnpj}` : ''}
                           </code>
                         </div>
                         <button
                           type="button"
                           onClick={() => copyText(acc.cpf, 'CPF')}
-                          className="p-1 text-slate-400 hover:text-[#C8102E]"
+                          className="p-1 text-slate-400 hover:text-[#C8102E] shrink-0"
                         >
                           <Copy className="w-3.5 h-3.5" />
                         </button>
                       </div>
 
-                      <div className="flex items-center justify-between gap-1">
-                        <div>
+                      <div className="flex items-center justify-between gap-1 min-w-0">
+                        <div className="min-w-0">
                           <span className="text-[10px] text-slate-400 block">Senha Local:</span>
                           <code className="font-mono font-bold text-[#C8102E] text-[11px]">
                             {acc.password}
@@ -276,7 +276,7 @@ export const LoginLondrinaGoPage: React.FC = () => {
                         <button
                           type="button"
                           onClick={() => copyText(acc.password, 'Senha')}
-                          className="p-1 text-slate-400 hover:text-[#C8102E]"
+                          className="p-1 text-slate-400 hover:text-[#C8102E] shrink-0"
                         >
                           <Copy className="w-3.5 h-3.5" />
                         </button>
@@ -289,13 +289,13 @@ export const LoginLondrinaGoPage: React.FC = () => {
           </div>
 
           {/* Explicação Técnica Profunda sobre o funcionamento do LondrinaGO / LondrinaON */}
-          <div className="bg-slate-900 text-white rounded-3xl p-6 border border-slate-800 space-y-4">
+          <div className="bg-slate-900 text-white rounded-3xl p-5 sm:p-6 border border-slate-800 space-y-4">
             <div className="flex items-center gap-2 text-amber-400 text-xs font-black uppercase tracking-wider">
-              <Building2 className="w-4 h-4 text-[#C8102E]" />
-              Arquitetura de Integração • Como funciona o LondrinaGO (LondrinaON Cidadão)
+              <Building2 className="w-4 h-4 text-[#C8102E] shrink-0" />
+              <span>Arquitetura de Integração • Como funciona o LondrinaGO</span>
             </div>
             <p className="text-xs text-slate-300 leading-relaxed">
-              O ecossistema de Identidade Digital de Londrina opera através do portal <strong>Londrina ON Cidadão</strong> (<code className="text-amber-300">autenticacao-londrinaoncidadao.cidadesinteligentes.org.br</code>), utilizando o protocolo <strong>OpenID Connect (OIDC) / OAuth 2.0</strong> integrado ao barramento federal <strong>Gov.br</strong>:
+              O ecossistema de Identidade Digital de Londrina opera através do portal <strong>Londrina ON Cidadão</strong> (<code className="text-amber-300 break-all">autenticacao-londrinaoncidadao.cidadesinteligentes.org.br</code>), utilizando o protocolo <strong>OpenID Connect (OIDC) / OAuth 2.0</strong> integrado ao barramento federal <strong>Gov.br</strong>:
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs">
               <div className="bg-slate-800/90 p-3.5 rounded-2xl border border-slate-700 space-y-1">

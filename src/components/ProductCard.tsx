@@ -13,7 +13,7 @@ export const ProductCard: React.FC<{ product: ProductWithProximity }> = ({ produ
     <div className="group bg-white rounded-2xl border border-slate-200/90 hover:border-[#C8102E] shadow-sm hover:shadow-xl transition-all duration-200 flex flex-col overflow-hidden">
       {/* Badge Superior de Proximidade (Hub de Bairros) */}
       <div
-        className={`px-3 py-1.5 text-[11px] font-extrabold flex items-center justify-between gap-1 ${
+        className={`px-3 py-1.5 text-[11px] font-extrabold flex items-center justify-between gap-1.5 ${
           product.proximity.isSameBairro
             ? 'bg-gradient-to-r from-[#C8102E] to-[#9B0B22] text-white'
             : product.proximity.isVizinhoProximo
@@ -21,12 +21,12 @@ export const ProductCard: React.FC<{ product: ProductWithProximity }> = ({ produ
             : 'bg-slate-100 text-slate-700 border-b border-slate-200'
         }`}
       >
-        <span className="flex items-center gap-1 truncate">
+        <span className="flex items-center gap-1 min-w-0 flex-1">
           <MapPin className="w-3.5 h-3.5 shrink-0" />
-          {product.proximity.badgeTexto}
+          <span className="truncate">{product.proximity.badgeTexto}</span>
         </span>
         {product.proximity.isSameBairro && (
-          <span className="bg-amber-400 text-slate-950 px-1.5 py-0.2 rounded text-[10px] font-black shrink-0">
+          <span className="bg-amber-400 text-slate-950 px-1.5 py-0.5 rounded text-[10px] font-black shrink-0">
             SEU BAIRRO
           </span>
         )}
