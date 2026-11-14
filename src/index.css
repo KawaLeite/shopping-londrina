@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Paleta Oficial — Shopping Digital de Londrina (Vermelho Cereja / Terra Vermelha, Branco, Prata e Ouro Café) */
+    --color-primary: #C8102E;
+    --color-primary-dark: #9B0B22;
+    --color-primary-light: #E11D48;
+    --color-primary-tint: #FFF1F2;
+
+    --color-accent: #F59E0B;
+    --color-accent-dark: #D97706;
+    --color-accent-tint: #FFFBEB;
+
+    --color-success: #16A34A;
+    --color-warning: #F59E0B;
+    --color-danger: #DC2626;
+    --color-info: #2563EB;
+
+    --bg-page: #F8FAFC;
+    --bg-card: #FFFFFF;
+    --bg-subtle: #F1F5F9;
+
+    --text-primary: #0F172A;
+    --text-secondary: #475569;
+    --text-muted: #94A3B8;
+
+    --border-default: #E2E8F0;
+    --border-strong: #CBD5E1;
+
+    --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.05);
+    --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.06);
+    --shadow-lg: 0 12px 32px rgba(15, 23, 42, 0.10);
+  }
+
+  body {
+    background-color: var(--bg-page);
+    color: var(--text-primary);
+    font-family: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Leaflet map container overrides */
+.leaflet-container {
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif !important;
+  z-index: 10;
+}
+

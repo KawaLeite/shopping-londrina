@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 68" fill="none">
+  <rect width="280" height="68" rx="16" fill="#9B0B22"/>
+  <rect x="2" y="2" width="276" height="64" rx="14" stroke="#FB7185" stroke-opacity="0.3" stroke-width="1.5"/>
+  <circle cx="36" cy="34" r="20" fill="#C8102E" stroke="#FBBF24" stroke-width="2"/>
+  <path d="M29 34 L34 39 L44 29" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="66" y="31" font-family="Plus Jakarta Sans, Inter, sans-serif" font-weight="800" font-size="20" fill="#FFFFFF" letter-spacing="-0.4">Londrina<tspan fill="#FBBF24">GO</tspan></text>
+  <text x="66" y="48" font-family="Plus Jakarta Sans, Inter, sans-serif" font-weight="600" font-size="10" fill="#FECDD3" letter-spacing="0.6">LOGIN ÚNICO • LONDRINA ON CIDADÃO</text>
+</svg>
+

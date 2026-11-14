@@ -1,0 +1,37 @@
+{
+  "name": "shopping-digital-londrina",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Protótipo Funcional do Shopping Digital de Londrina-PR — Integrado ao LondrinaGO, Hub de Bairros e Inteligência Econômica Municipal",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "leaflet": "^1.9.4",
+    "lucide-react": "^1.21.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "recharts": "^3.9.0",
+    "sonner": "^2.0.7",
+    "tailwind-merge": "^3.6.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.3",
+    "@types/leaflet": "^1.9.21",
+    "@types/react": "^18.3.31",
+    "@types/react-dom": "^18.3.7",
+    "@vitejs/plugin-react": "^4.2.0",
+    "autoprefixer": "^10.4.12",
+    "postcss": "^8.5.24",
+    "tailwindcss": "^3.2.1",
+    "tailwindcss-animate": "^1.0.7",
+    "typescript": "^5.6.3",
+    "vite": "^6.4.3"
+  }
+}
+

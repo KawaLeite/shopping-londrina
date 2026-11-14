@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 190" fill="none">
+  <defs>
+    <linearGradient id="bagGrad" x1="0" y1="0" x2="170" y2="180" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#E11D48"/>
+      <stop offset="55%" stop-color="#C8102E"/>
+      <stop offset="100%" stop-color="#8B0A1E"/>
+    </linearGradient>
+    <linearGradient id="foldGrad" x1="0" y1="40" x2="60" y2="180" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#9B0B22"/>
+      <stop offset="100%" stop-color="#680515"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FBBF24"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#8B0A1E" flood-opacity="0.24"/>
+    </filter>
+  </defs>
+
+  <!-- Shopping Bag Group -->
+  <g filter="url(#softShadow)" transform="translate(12, 8)">
+    <!-- Back Handle -->
+    <path d="M52 46 C52 14, 102 14, 102 46" stroke="#8B0A1E" stroke-width="8" stroke-linecap="round" fill="none"/>
+    <!-- Left Side Fold -->
+    <path d="M16 52 L38 42 L38 160 L12 146 Z" fill="url(#foldGrad)"/>
+    <!-- Front Bag Body -->
+    <path d="M36 42 L144 48 C150 48.5 154 53 153 59 L146 164 C145.5 170 140 174 134 173 L36 162 Z" fill="url(#bagGrad)"/>
+    <!-- Top Rim Highlight -->
+    <path d="M36 42 L144 48 L142 56 L36 50 Z" fill="#FB7185" fill-opacity="0.28"/>
+    <!-- Grommets -->
+    <circle cx="68" cy="60" r="4.5" fill="#FFFFFF" fill-opacity="0.9"/>
+    <circle cx="116" cy="63" r="4.5" fill="#FFFFFF" fill-opacity="0.9"/>
+    <!-- Front Handle -->
+    <path d="M68 60 C68 22, 116 24, 116 63" stroke="#FFFFFF" stroke-width="7.5" stroke-linecap="round" fill="none"/>
+
+    <!-- Londrina Crest Emblem on Bag -->
+    <g transform="translate(62, 74)">
+      <!-- Mural Crown (Torres de Londrina) -->
+      <rect x="8" y="0" width="8" height="9" rx="1.5" fill="url(#goldGrad)"/>
+      <rect x="20" y="-2" width="12" height="11" rx="1.5" fill="url(#goldGrad)"/>
+      <rect x="36" y="0" width="8" height="9" rx="1.5" fill="url(#goldGrad)"/>
+      <path d="M6 8 H46 V13 H6 Z" fill="#FDE68A"/>
+
+      <!-- Shield -->
+      <path d="M8 14 H44 V36 C44 48 26 56 26 56 C26 56 8 48 8 36 Z" fill="#FFFFFF" stroke="url(#goldGrad)" stroke-width="2.5"/>
+      <!-- Inner Red & Sun Design -->
+      <path d="M11 17 H41 V31 H11 Z" fill="#C8102E"/>
+      <circle cx="26" cy="25" r="5.5" fill="#FBBF24"/>
+      <!-- Terra Vermelha Rows / Coffee Waves -->
+      <path d="M12 36 Q26 32 40 36" stroke="#15803D" stroke-width="3" stroke-linecap="round" fill="none"/>
+      <path d="M15 42 Q26 38 37 42" stroke="#C8102E" stroke-width="2.8" stroke-linecap="round" fill="none"/>
+
+      <!-- Coffee Branches (Ramos de Café) -->
+      <path d="M4 42 C0 32, 2 20, 6 14" stroke="#FBBF24" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+      <path d="M48 42 C52 32, 50 20, 46 14" stroke="#FBBF24" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+      <!-- Ribbon -->
+      <rect x="6" y="57" width="40" height="9" rx="4.5" fill="#FFFFFF" fill-opacity="0.95"/>
+      <text x="26" y="63.8" text-anchor="middle" font-family="Plus Jakarta Sans, Arial, sans-serif" font-weight="800" font-size="5.8" fill="#C8102E" letter-spacing="0.6">1934</text>
+    </g>
+  </g>
+
+  <!-- Typography: SHOPPING LONDRINA -->
+  <g transform="translate(185, 36)">
+    <!-- Badge Pill Top -->
+    <rect x="2" y="0" width="238" height="24" rx="12" fill="#FFF1F2" stroke="#FECDD3" stroke-width="1.2"/>
+    <circle cx="15" cy="12" r="4" fill="#C8102E"/>
+    <text x="26" y="16" font-family="Plus Jakarta Sans, Inter, sans-serif" font-weight="800" font-size="10.5" fill="#9B0B22" letter-spacing="1.1">PREFEITURA DE LONDRINA • PR</text>
+
+    <!-- SHOPPING -->
+    <text x="0" y="76" font-family="Plus Jakarta Sans, Inter, sans-serif" font-weight="800" font-size="54" fill="#C8102E" letter-spacing="-1.2">SHOPPING</text>
+
+    <!-- LONDRINA -->
+    <text x="0" y="128" font-family="Plus Jakarta Sans, Inter, sans-serif" font-weight="900" font-size="52" fill="#9B0B22" letter-spacing="0.5">LONDRINA</text>
+
+    <!-- Red & Gold Accent Bar -->
+    <rect x="305" y="96" width="95" height="8" rx="4" fill="#C8102E"/>
+    <rect x="305" y="110" width="64" height="8" rx="4" fill="#F59E0B"/>
+  </g>
+</svg>
+
